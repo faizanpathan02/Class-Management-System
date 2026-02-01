@@ -23,6 +23,8 @@ public class AdminController {
             System.out.println("6. Display Batch Details");
             System.out.println("7. Add Student");
             System.out.println("8. Display Student Details");
+            System.out.println("9. Update Details");
+            System.out.println("10.Exit");
             System.out.println("\n");
 
 
@@ -54,6 +56,9 @@ public class AdminController {
                     university.displayStudentDetails();
                     break;
                 case 9:
+                    university.updateDetails();
+                    break;
+                case 10:
                     flag = false;
                     break;
                 default:

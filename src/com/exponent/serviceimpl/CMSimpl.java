@@ -156,6 +156,98 @@ public class CMSimpl implements University {
         for (Student student : studentList){
             System.out.println(student);
         }
+    }
+
+    @Override
+    public void updateDetails() {
+
+        boolean flag = true;
+        while (flag){
+            System.out.println("\n");
+            System.out.println("1.Update Course Details");
+            System.out.println("2.Update Faculty Details");
+            System.out.println("3.Update Batch Details");
+            System.out.println("4.Update Student Details");
+            System.out.println("5.Exit");
+            System.out.println("\nEnter Your Choice:");
+
+            int choice = sc.nextInt();
+            switch(choice){
+                case 1:
+                    updateCourseDetails();
+                    break;
+                case 2:
+                    updateFacultyDetails();
+                    break;
+                case 3:
+                    updateBatchDetails();
+                    break;
+                case 4:
+                    updateStudentDetails();
+                    break;
+                case 5:
+                    flag = false;
+                default:
+                    System.out.println("Invalid choice");
+
+
+            }
+        }
+    }
+
+    public void updateCourseDetails(){
+        Course course1 = new Course();
+        System.out.println("Enter New Course ID : ");
+        course1.setCourse_id(sc.nextInt());
+        System.out.println("Enter New Course Name : ");
+        course1.setCourse_name(sc.next());
+        courseList.add(course1);
+        System.out.println("Course Details Updated Successfully......!");
+        System.out.println("-------------------------------------------------");
+        System.out.println("New Course ID : "+course1.getCourse_id());
+        System.out.println("New Course Name : "+course1.getCourse_name());
+    }
+
+    public void updateFacultyDetails(){
+        Faculty faculty1 = new Faculty();
+        System.out.println("Enter New Faculty ID :");
+        faculty1.setFaculty_id(sc.nextInt());
+        System.out.println("Enter New FAculty Name : ");
+        faculty1.setFaculty_name(sc.next());
+        facultyList.add(faculty1);
+        System.out.println("Faculty Details Updated Successfully......!");
+        System.out.println("-------------------------------------------------");
+        System.out.println("New Faculty ID : "+faculty1.getFaculty_id());
+        System.out.println("New FAculty Name : "+faculty1.getFaculty_name());
 
     }
+
+    public void updateBatchDetails(){
+        Batch batch1 = new Batch();
+        System.out.println("Enter New Batch ID : ");
+        batch1.setBatch_id(sc.nextInt());
+        System.out.println("Enter New Batch Name : ");
+        batch1.setBatch_name(sc.next());
+        batchList.add(batch1);
+        System.out.println("Batch Details Updated Successfully......!");
+        System.out.println("-------------------------------------------------");
+        System.out.println("New Batch ID : "+batch1.getBatch_id());
+        System.out.println("New Batch Name : "+batch1.getBatch_name());
+
+    }
+
+    public void updateStudentDetails(){
+        Student student1 = new Student();
+        System.out.println("Enter New Student ID : ");
+        student1.setStudent_id(sc.nextInt());
+        System.out.println("Enter New Student Name : ");
+        student1.setStudent_name(sc.next());
+        studentList.add(student1);
+        System.out.println("Student Details Updated Successfully........!");
+        System.out.println("-------------------------------------------------");
+        System.out.println("New Student ID : "+student1.getStudent_id());
+        System.out.println("New Student Name : "+student1.getStudent_name());
+    }
+
+
 }

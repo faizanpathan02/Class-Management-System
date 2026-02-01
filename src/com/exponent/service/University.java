@@ -10,4 +10,5 @@ public interface University {
     void displayCourseDetails();
     void addBatch();
     void displayBatchDetails();
+    void updateDetails();
 }
